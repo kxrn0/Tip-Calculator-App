@@ -288,4 +288,8 @@ body {
         margin: 50px auto;
         width: fit-content;
     }
+
+    .main .tip-percentage ul li {
+        width: 146px;
+    }
 }
