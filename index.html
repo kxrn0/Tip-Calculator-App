@@ -3,42 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="reset.css">
+  <script src="main.js" defer></script>
+  <title>Tip calculator app</title>
 </head>
 <body>
-
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+<header class="header">
+  <h2>spli</h2>
+  <h2>tter</h2>
+</header>
+<main class="main">
+  <section class="left">
+    <div class="bill">
+      <label for="bill-input" class="top-label">Bill</label>
+      <div class="input-wrapper">
+        <img src="./images/icon-dollar.svg" alt="dollar sign">
+        <input type="number" id="bill-input" placeholder="0">
+      </div>
+    </div>
+    <div class="tip-percentage">
+      <label for="me" class="top-label">Select Tip %</label>
+      <ul>
+        <li><input type="radio" name="by-me" id="tip-1" data-percentage="5"><label for="tip-1">5%</label></li>
+        <li><input type="radio" name="by-me" id="tip-2" data-percentage="10"><label for="tip-2">10%</label></li>
+        <li><input type="radio" name="by-me" id="tip-3" data-percentage="15" checked><label for="tip-3">15%</label></li>
+        <li><input type="radio" name="by-me" id="tip-4" data-percentage="25"><label for="tip-4">25%</label></li>
+        <li><input type="radio" name="by-me" id="tip-5" data-percentage="50"><label for="tip-5">50%</label></li>
+        <li><input type="number" id="me" placeholder="Custom"></li>
+      </ul>
+    </div>
+    <div class="number-of-people">
+      <div class="wrapper top-label"><label for="people-input">Number of People</label><p class="errr hidden">Can't be zero</p></div>
+      <div class="input-wrapper">
+        <img src="./images/icon-person.svg" alt="person icon">
+        <!-- <input type="number" id="people-input" placeholder="0" class="errorified"> -->
+        <input type="number" id="people-input" placeholder="0">
+      </div>
+    </div>
+  </section>
+  <section class="right">
+    <div class="top-part">
+      <div class="tip-amount tip-info">
+        <div class="info">
+          <h3>Tip Amount</h3>
+          <p>/ person</p>
+        </div>
+        <p class="value">$0.00</p>
+      </div>
+      <div class="total-per-person tip-info">
+        <div class="info">
+          <h3>Total</h3>
+          <p>/ person</p>
+        </div>
+        <p class="value">$0.00</p>
+      </div>
+    </div>
+    <button class="reset">RESET</button>
+  </section>
+</main>
 </body>
 </html>

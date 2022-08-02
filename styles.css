@@ -1,0 +1,291 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #C5E4E7;
+    --left-color: #00474B;
+    --label-color: #5E7A7D;
+    --input-bg: #F3F9FA;
+    --placeholder-color: #9EBBBD;
+    --outline-color: #26C2AE;
+    --holder-color: #547878;
+    --orange: #E17457;
+    --seven: #7F9D9F;
+    --six: #3D6666;
+    --radio-silent: #9FE8DF;
+    --inactive-bg: #0D686D;
+}
+
+@font-face {
+    font-family: space;
+    src: url("./SpaceMono-Bold.ttf");
+}
+
+body {
+    background: var(--body-bg);
+}
+
+.header {
+    margin: 165px auto 88px auto;
+    width: fit-content;
+}
+
+.header h2 {
+    color: var(--six);
+    font-size: 25px;
+    text-transform: uppercase;
+    font-family: space;
+    letter-spacing: 10px;
+    margin-bottom: 10px;
+}
+
+.main {
+    background: white;
+    box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
+    border-radius: 25px;
+    margin: auto;
+    width: 920px;
+    min-width: fit-content;
+    height: 480px;
+    display: flex;
+}
+
+.main .left {
+    margin: 48px;
+}
+
+.main .right {
+    background: var(--left-color);
+    margin: 32px;
+    padding: 40px;
+    width: 100%;
+    min-width: fit-content;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main .right .top-part {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.main .right .tip-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main .right .tip-info .value {
+    color: var(--outline-color);
+    font-family: space;
+    font-size: 48px;
+    line-height: 71px;
+    margin-left: 20px;
+}
+
+.main .right .tip-info .info h3 {
+    color: white;
+    font-family: space;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.main .right .tip-info .info p {
+    color: var(--seven);
+    font-family: space;
+    font-size: 13px;
+    line-height: 19.25px;
+}
+
+.main .right .reset {
+    background: var(--outline-color);
+    color: var(--left-color);
+    font-family: space;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    padding: 9px 40px;
+    line-height: 30px;
+    transition: background .33s;
+}
+
+.main .right .reset.inactive {
+    background: var(--inactive-bg);
+    color: var(--left-color);
+}
+
+.main .right .reset:not(.inactive):hover {
+    background: var(--radio-silent);
+}
+
+.main .left label {
+    color: var(--label-color);
+    font-family: space;
+    font-size: 16px;
+}
+
+.main .left .top-label {
+    display: block;
+    margin-bottom: 6px;
+    line-height: 24px;
+}
+
+.main .left .input-wrapper {
+    position: relative;
+    width: 380px;
+    height: 50px;
+    display: flex;
+}
+
+.main .left input[type="number"] {
+    color: var(--left-color);
+    background: var(--input-bg);
+    font-family: space;
+    font-size: 24px;
+    padding: 6px 17px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    text-align: end;
+    outline-color: transparent;
+    transition: outline-color .33s;
+}
+
+.main .left input[type="number"]:focus {
+    outline-color: var(--outline-color);
+}
+
+.main .left input[type="number"]::placeholder {
+    color: var(--placeholder-color);
+}
+
+.main .left .input-wrapper img {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+}
+
+.main .tip-percentage {
+    margin: 40px 0;
+}
+
+.main .tip-percentage ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    row-gap: 16px;
+    column-gap: 14px;
+}
+
+.main .tip-percentage ul li {
+    width: 118px;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.main .tip-percentage input[type="number"] {
+    padding: 6px 15px;
+}
+
+.main .tip-percentage input[type="number"]::placeholder {
+    color: var(--holder-color);
+    font-size: 20px;
+    text-align: center;
+}
+
+.main .tip-percentage input[type="radio"] {
+    appearance: none;
+    background: var(--left-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    z-index: 10;
+    transition: background-color .33s;
+}
+
+.main .tip-percentage input[type="radio"]:hover {
+    background: var(--radio-silent);
+}
+
+.main .tip-percentage input[type="radio"]:checked {
+    background: var(--outline-color);
+}
+
+.main .tip-percentage input[type="radio"]:checked+label {
+    color: var(--left-color);
+}
+
+.main .tip-percentage ul label {
+    color: white;
+    font-size: 24px;
+    line-height: 35.5px;
+    z-index: 20;
+}
+
+.main .left .number-of-people .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main .left .number-of-people .wrapper p {
+    color: var(--orange);
+    font-family: space;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.main .left .number-of-people input[type="number"].errorified {
+    outline: 2px solid var(--orange);
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 480px) {
+    .main {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .main .tip-percentage ul {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .main .left {
+        margin: 32px;
+    }
+
+    .main .left .input-wrapper {
+        width: 100%;
+    }
+
+    .main .right {
+        width: auto;
+        margin: 32px 24px;
+        padding: 37px 24px 24px 24px;
+    }
+
+    .main .right .tip-info .value {
+        font-size: 32px;
+    }
+
+    .header {
+        margin: 50px auto;
+        width: fit-content;
+    }
+}
